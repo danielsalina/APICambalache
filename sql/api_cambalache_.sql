@@ -1,0 +1,5 @@
+CREATE TABLE `api_cambalache`.`usuarios` ( `id_usuario` INT NOT NULL AUTO_INCREMENT , `nombre` TEXT NOT NULL , `email` TEXT NOT NULL , `fercha_de_nacimiento` DATE NOT NULL , `lenguaje_de_programacion_favorito` ENUM('NINGUNO','JS','PYTHON') NULL , `password` TEXT NOT NULL , PRIMARY KEY (`id_usuario`), UNIQUE (`email`)) ENGINE = InnoDB;
+
+CREATE TABLE `api_cambalache`.`historial_de_login` ( `fecha_y_hora` DATE NOT NULL , `tipo` ENUM ('GET','POST','PUT', 'DELETE') NOT NULL , `id_usuario` INT NOT NULL , UNIQUE (`id_usuario`)) ENGINE = InnoDB;
+
+CREATE TABLE `api_cambalache`.`repositorios` ( `id_usuario` INT NOT NULL, `id_repositorio` INT NOT NULL, `nombre_de_proyecto` TEXT NOT NULL , `lenguaje` ENUM ('NINGUNO','JS','PYTHON') NOT NULL , `fecha_de_creacion` DATE NOT NULL , `descripcion` TEXT NULL) ENGINE = InnoDB;
